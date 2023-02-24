@@ -20,7 +20,7 @@ The following parameters can be adjusted:
 `getTagNavi("1" , "2" , "3" , "4" , $url, $urlArg)?>`
 
 * 1 = location of blog start page (/ or /blog/ or ...)
-* 2 = number of entries to show per shortcut, 0 for unlimited
+* 2 = number of entries to show, 0 for unlimited
 * 3 = Name for the css class
 * 4 = Name for the link that displays all blog entries. (All or All Projects or ...)
 
