@@ -1,21 +1,25 @@
 # yellow-tagnavi
-Extension for Datenstrom Yellow. It sets a link that looks like an embedded video.
+Extension for Datenstrom Yellow. This extension creates a navigation from the blogtags.
 
-<p align="center"><img src="screenshot-tagnavi.jpg?raw=true" alt="Bildschirmfoto"></p>
+<p align="center"><img src="screenshot-tagNavi.jpg?raw=true" alt="Bildschirmfoto"></p>
 
 ## How to use the Yellow tagNavi extension
 
-1. Insert the following code in a suitable place in the start-blog.html.
+1. Insert the following code in a suitable place in your `start-blog.html`.
+```
 <?php $url = $this->yellow->page->getBase(). "/" .$this->yellow->toolbox->getLocationArguments(); echo $this->yellow->extension->get("tagnavi")->getTagNavi("/" , "0" , "tagnavi" , "All Projects" , $url)?>
+```
 The following parameters can be adjusted:
-getTagNavi("1" , "2" , "3" , "4" , $url)?>
-1 = location of blog start page (/ or /blog/ or ...)
-2 = number of entries to show per shortcut, 0 for unlimited
-3 = Name for the css class
-4 = Name for the link that displays all blog entries. (All or All Projects or ...)
+`getTagNavi("1" , "2" , "3" , "4" , $url)?>`
 
-2. Make adjustments in css or scss. Here is an scss example:
+* 1 = location of blog start page (/ or /blog/ or ...)
+* 2 = number of entries to show per shortcut, 0 for unlimited
+* 3 = Name for the css class
+* 4 = Name for the link that displays all blog entries. (All or All Projects or ...)
 
+2. Make adjustments in `css` or `scss`. Here is an `scss` example:
+
+```
 .tagnavi{
   ul{
     padding-left: 0;
@@ -34,6 +38,7 @@ getTagNavi("1" , "2" , "3" , "4" , $url)?>
     text-decoration: underline;
   }
 }
+```
 
 3. This extension requires the blog extension.
 
