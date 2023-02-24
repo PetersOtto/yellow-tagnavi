@@ -17,7 +17,7 @@ Feel free to make this extension better :)
 
 ```
 The following parameters can be adjusted:
-`getTagNavi("1" , "2" , "3" , "4" , $url)?>`
+`getTagNavi("1" , "2" , "3" , "4" , $url, $urlArg)?>`
 
 * 1 = location of blog start page (/ or /blog/ or ...)
 * 2 = number of entries to show per shortcut, 0 for unlimited
