@@ -11,8 +11,7 @@ Feel free to make this extension better :)
 
 ## How to use the Yellow tagNavi extension
 
-1. **Important:** Add the following code **before** you install the extension!  
-Insert the following code in a suitable place in your `start-blog.html`.
+1. Insert the following code in a suitable place in your `start-blog.html`.
 ```
 <?php $url = $this->yellow->page->getBase(); $urlArg = $this->yellow->toolbox->getLocationArguments(); echo $this->yellow->extension->get("tagnavi")->getTagNavi("/" , "0" , "tagnavi" , "All Projects" , $url, $urlArg)?>
 
