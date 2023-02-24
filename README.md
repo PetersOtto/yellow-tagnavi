@@ -14,7 +14,8 @@ Feel free to make this extension better :)
 1. **Important:** Add the following code **before** you install the extension!  
 Insert the following code in a suitable place in your `start-blog.html`.
 ```
-<?php $url = $this->yellow->page->getBase(). "/" .$this->yellow->toolbox->getLocationArguments(); echo $this->yellow->extension->get("tagnavi")->getTagNavi("/" , "0" , "tagnavi" , "All Projects" , $url)?>
+<?php $url = $this->yellow->page->getBase(); $urlArg = $this->yellow->toolbox->getLocationArguments(); echo $this->yellow->extension->get("tagnavi")->getTagNavi("/" , "0" , "tagnavi" , "All Projects" , $url, $urlArg)?>
+
 ```
 The following parameters can be adjusted:
 `getTagNavi("1" , "2" , "3" , "4" , $url)?>`
