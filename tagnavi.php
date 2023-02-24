@@ -47,7 +47,7 @@ class YellowTagNavi
             $output .= "</ul>\n";
             $output .= "</div>\n";
         } else {
-            $page->error(500, "Blogtags '$startLocation' does not exist!");
+            $output = "The location of your blog start page is wrong (/ or /blog/ or ...)";
         }
         return $output;
     }
