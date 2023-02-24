@@ -11,13 +11,13 @@ class YellowTagNavi
     }
 
     // Return a blogtag navigation
-    public function getTagNavi($startLocation, $entriesMax, $class, $filterName, $url)
+    public function getTagNavi($startLocation, $entriesMax, $class, $filterName, $url, $urlArg)
     {
         $output = null;
         $blogStart = $this->yellow->content->find($startLocation);
         $pages = $this->yellow->extension->get("blog")->getBlogPages($startLocation);
         $tags = $this->yellow->extension->get("blog")->getMeta($pages, "tag");
-
+        $url = $url.$startLocation.$urlArg;
         if (!is_array_empty($tags)) {
             $tags = $this->yellow->lookup->normaliseArray($tags);
             if ($entriesMax != 0 && count($tags) > $entriesMax) {
