@@ -5,13 +5,22 @@ Extension for Datenstrom Yellow. This extension creates a navigation from the bl
 
 ## Some words from me
 I developed this extension because I needed a solution for one of my projects.  
-This extension works, but is not perfectly worked out. 
-
+This extension works, but is not perfectly worked out.
 Feel free to make this extension better :)
+
+## Another Solution
+Another solution is proposed here:  
+https://github.com/datenstrom/yellow/discussions/842
+
+And here is the link to the theme, that is mentioned there. It is about the `clarity-sidebar.html`:  
+https://github.com/zenblom/yellow-clarity/blob/main/clarity-sidebar.html
 
 ## How to use the Yellow tagNavi extension
 
-1. Insert the following code in a suitable place in your `start-blog.html`.
+1. [Download extension](https://github.com/PetersOtto/yellow-tagnavi/archive/refs/heads/main.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
+
+2. Insert the following code in a suitable place in your `start-blog.html`.
+
 ```
 <?php $url = $this->yellow->page->getBase(); $urlArg = $this->yellow->toolbox->getLocationArguments(); echo $this->yellow->extension->get("tagnavi")->getTagNavi("/" , "0" , "tagnavi" , "All Projects" , $url, $urlArg)?>
 
@@ -24,7 +33,7 @@ The following parameters can be adjusted:
 * 3 = Name for the css class
 * 4 = Name for the link that displays all blog entries. (All or All Projects or ...)
 
-2. Make adjustments in `css` or `scss`. Here is an `scss` example:
+3. Make adjustments in `css` or `scss`. Here is an `scss` example:
 
 ```
 .tagnavi{
@@ -49,10 +58,6 @@ The following parameters can be adjusted:
 
 3. This extension requires the blog extension.
 
-
-## Installation
-
-[Download extension](https://github.com/PetersOtto/yellow-tagnavi/archive/refs/heads/main.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
 
 ## Developer
 
