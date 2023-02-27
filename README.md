@@ -33,7 +33,7 @@ The following parameters can be adjusted:
 * 3 = Name for the css class
 * 4 = Name for the link that displays all blog entries. (All or All Projects or ...)
 
-3. Make adjustments in `css` or `scss`. Here is an `scss` example:
+3. Make adjustments in `css` or `scss`. Here is a `scss` example:
 
 ```
 .tagnavi{
