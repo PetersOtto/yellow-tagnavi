@@ -56,7 +56,7 @@ The following parameters can be adjusted:
 }
 ```
 
-3. This extension requires the blog extension.
+4. This extension requires the blog extension.
 
 
 ## Developer
