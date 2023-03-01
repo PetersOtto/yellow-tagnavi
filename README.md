@@ -33,15 +33,14 @@ The following parameters can be adjusted:
 * 3 = Name for the css class
 * 4 = Name for the link that displays all blog entries. (All or All Projects or ...)
 
-3. Make adjustments in `css`. Here is a basic example:
-
+3. Make adjustments in `css`. Here is a basic example. Paste the code into your `css-file`, e.g. at the end of your `stockholm.css`.
 ```
 .tagnavi ul {
   padding-left: 0;
 }
 .tagnavi li {
   display: inline-block;
-  padding-right: 2rem;
+  padding-right: 1rem;
 }
 .tagnavi a {
   text-decoration: none;
