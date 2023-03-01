@@ -1,7 +1,7 @@
 # yellow-tagnavi
 Extension for Datenstrom Yellow. This extension creates a navigation from the blogtags.
 
-<p align="center"><img src="screenshot-tagnavi.jpg?raw=true" alt="Bildschirmfoto"></p>
+<p align="center"><img src="screenshot-yellow-tagnavi.jpg?raw=true" alt="Bildschirmfoto"></p>
 
 ## Some words from me
 I developed this extension because I needed a solution for one of my projects.  
