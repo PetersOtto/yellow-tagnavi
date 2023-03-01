@@ -33,26 +33,24 @@ The following parameters can be adjusted:
 * 3 = Name for the css class
 * 4 = Name for the link that displays all blog entries. (All or All Projects or ...)
 
-3. Make adjustments in `css` or `scss`. Here is a `scss` example:
+3. Make adjustments in `css`. Here is a basic example:
 
 ```
-.tagnavi{
-  ul{
-    padding-left: 0;
-  }
-  li{
-    display: inline-block;
-    padding-right: 2rem;
-  }
-  a{
-    text-decoration: none;
-    &:hover{
-      text-decoration: underline;
-    }
-  }
-  a.active{
-    text-decoration: underline;
-  }
+.tagnavi ul {
+  padding-left: 0;
+}
+.tagnavi li {
+  display: inline-block;
+  padding-right: 2rem;
+}
+.tagnavi a {
+  text-decoration: none;
+}
+.tagnavi a:hover {
+  text-decoration: underline;
+}
+.tagnavi a.active {
+  text-decoration: underline;
 }
 ```
 
