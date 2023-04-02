@@ -1,7 +1,7 @@
 <?php
 class YellowTagNavi
 {
-    const VERSION = "0.8.01";
+    const VERSION = "0.8.02";
     public $yellow; // access to API
 
     // Handle initialisation
@@ -15,8 +15,8 @@ class YellowTagNavi
     {
         $output = null;
         $blogStart = $this->yellow->content->find($startLocation);
-        $pages = $this->yellow->extension->get("blog")->getBlogPages($startLocation);
-        $tags = $this->yellow->extension->get("blog")->getMeta($pages, "tag");
+        $pages = $this->getBlogPages($startLocation);
+        $tags = $this->getMeta($pages, "tag");
         $url = $url.$startLocation.$urlArg;
         
         if (strpos($urlArg, "age:")) {
@@ -58,5 +58,33 @@ class YellowTagNavi
             $output = "The location of your blog start page is wrong (/ or /blog/ or ...)";
         }
         return $output;
+    }
+// Return blog pages
+    public function getBlogPages($location) {
+        $pages = $this->yellow->content->clean();
+        $blogStart = $this->yellow->content->find($location);
+        if ($blogStart && $blogStart->get("layout")=="blog-start") {
+            if ($this->yellow->system->get("blogStartLocation")!="auto") {
+                $pages = $this->yellow->content->index();
+            } else {
+                $pages = $blogStart->getChildren();
+            }
+            $pages->filter("layout", "blog");
+        }
+        return $pages;
+    }
+
+    // Return meta data from page collection
+    public function getMeta($pages, $key) {
+        $data = array();
+        foreach ($pages as $page) {
+            if ($page->isExisting($key)) {
+                foreach (preg_split("/\s*,\s*/", $page->get($key)) as $entry) {
+                    if (!isset($data[$entry])) $data[$entry] = 0;
+                    ++$data[$entry];
+                }
+            }
+        }
+        return $data;
     }
 }
