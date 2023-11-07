@@ -1,7 +1,7 @@
 <?php
 class YellowTagNavi
 {
-    const VERSION = "0.8.02";
+    const VERSION = "0.8.04";
     public $yellow; // access to API
 
     // Handle initialisation
@@ -15,8 +15,10 @@ class YellowTagNavi
     {
         $output = null;
         $blogStart = $this->yellow->content->find($startLocation);
-        $pages = $this->getBlogPages($startLocation);
-        $tags = $this->getMeta($pages, "tag");
+        $pages = $this->yellow->content->index()->filter("layout", "blog")->sort("published", false);
+        $tags = $pages->group("tag"); // = group content by tag with ascending name, A-Z
+        // $tags = $pages->group("tag", false); // = group content by tag with descending name, Z-A
+        // $tags = $pages->group("tag", false, "count"); // = group content by tag with descending count, highest first
         $url = $url.$startLocation.$urlArg;
         
         if (strpos($urlArg, "age:")) {
@@ -27,12 +29,9 @@ class YellowTagNavi
         }
         
         if (!is_array_empty($tags)) {
-            $tags = $this->yellow->lookup->normaliseArray($tags);
             if ($entriesMax != 0 && count($tags) > $entriesMax) {
-                uasort($tags, "strnatcasecmp");
                 $tags = array_slice($tags, -$entriesMax, $entriesMax, true);
             }
-            uksort($tags, "strnatcasecmp");
             $output = "<div class=\"" . htmlspecialchars($class) . "\">\n";
             $output .= "<ul>\n";
             if ($url == $blogStart->getLocation(true). $urlPagination){
@@ -58,33 +57,5 @@ class YellowTagNavi
             $output = "The location of your blog start page is wrong (/ or /blog/ or ...)";
         }
         return $output;
-    }
-// Return blog pages
-    public function getBlogPages($location) {
-        $pages = $this->yellow->content->clean();
-        $blogStart = $this->yellow->content->find($location);
-        if ($blogStart && $blogStart->get("layout")=="blog-start") {
-            if ($this->yellow->system->get("blogStartLocation")!="auto") {
-                $pages = $this->yellow->content->index();
-            } else {
-                $pages = $blogStart->getChildren();
-            }
-            $pages->filter("layout", "blog");
-        }
-        return $pages;
-    }
-
-    // Return meta data from page collection
-    public function getMeta($pages, $key) {
-        $data = array();
-        foreach ($pages as $page) {
-            if ($page->isExisting($key)) {
-                foreach (preg_split("/\s*,\s*/", $page->get($key)) as $entry) {
-                    if (!isset($data[$entry])) $data[$entry] = 0;
-                    ++$data[$entry];
-                }
-            }
-        }
-        return $data;
     }
 }
