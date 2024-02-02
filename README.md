@@ -3,18 +3,6 @@ Extension for Datenstrom Yellow. This extension creates a navigation from the bl
 
 <p align="center"><img src="screenshot-yellow-tagnavi.jpg?raw=true" alt="Bildschirmfoto"></p>
 
-## Some words from me
-I developed this extension because I needed a solution for one of my projects.  
-This extension works, but is not perfectly worked out.
-Feel free to make this extension better :)
-
-## Another Solution
-Another solution is proposed here:  
-https://github.com/datenstrom/yellow/discussions/842
-
-And here is the link to the theme, that is mentioned there. It is about the `clarity-sidebar.html`:  
-https://github.com/zenblom/yellow-clarity/blob/main/clarity-sidebar.html
-
 ## How to use the Yellow tagNavi extension
 
 1. [Download extension](https://github.com/PetersOtto/yellow-tagnavi/archive/refs/heads/main.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
