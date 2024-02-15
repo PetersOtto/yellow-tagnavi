@@ -32,11 +32,11 @@ class YellowTagNavi
         
         if (!is_array_empty($tags)) {
             if ($tagCount == "count"){
-                $countValue = 0;
+                $countPost = 0;
                 foreach ($tags as $key => $value) {
-                    $countValue += count($value);
+                    $countPost++;
                 }
-                $numberAllPosts = "<span>" . $countValue . "</span>";
+                $numberAllPosts = "<span>" . $countPost . "</span>";
             }
             if ($entriesMax != 0 && count($tags) > $entriesMax) {
                 $tags = array_slice($tags, -$entriesMax, $entriesMax, true);
@@ -71,3 +71,4 @@ class YellowTagNavi
         return $output;
     }
 }
+
