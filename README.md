@@ -10,7 +10,7 @@ Extension for Datenstrom Yellow. This extension creates a navigation from the bl
 2. Insert the following code in a suitable place in your `start-blog.html`.
 
 ```
-<?php $url = $this->yellow->page->getBase(); $urlArg = $this->yellow->toolbox->getLocationArguments(); echo $this->yellow->extension->get("eddtagnavi")->getTagNavi("/blog/" , count , "0" , "tagnavi" , "All Projects" , $url, $urlArg)?>
+<?php $url = $this->yellow->page->getBase(); $urlArg = $this->yellow->toolbox->getLocationArguments(); echo $this->yellow->extension->get("tagnavi")->getTagNavi("/blog/" , "count" , "0" , "tagnavi" , "All Projects" , $url, $urlArg)?>
 ```
 The following parameters can be adjusted:
 `getTagNavi("1" , "2" , "3" , "4" , "5" , $url, $urlArg)?>`
