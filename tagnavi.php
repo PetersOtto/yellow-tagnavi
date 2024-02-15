@@ -32,7 +32,7 @@ class YellowTagNavi
         
         if (!is_array_empty($tags)) {
             if ($tagCount == "count"){
-                $countValue = "";
+                $countValue = 0;
                 foreach ($tags as $key => $value) {
                     $countValue += count($value);
                 }
