@@ -1,5 +1,5 @@
 # yellow-tagnavi
-Extension for Datenstrom Yellow. This extension creates a navigation from the blogtags.
+Extension for Datenstrom Yellow. This extension creates a navigation from the blogtags. If wanted, then with number of posts.
 
 <p align="center"><img src="screenshot-yellow-tagnavi.jpg?raw=true" alt="Bildschirmfoto"></p>
 
@@ -10,34 +10,52 @@ Extension for Datenstrom Yellow. This extension creates a navigation from the bl
 2. Insert the following code in a suitable place in your `start-blog.html`.
 
 ```
-<?php $url = $this->yellow->page->getBase(); $urlArg = $this->yellow->toolbox->getLocationArguments(); echo $this->yellow->extension->get("tagnavi")->getTagNavi("/" , "0" , "tagnavi" , "All Projects" , $url, $urlArg)?>
-
+<?php $url = $this->yellow->page->getBase(); $urlArg = $this->yellow->toolbox->getLocationArguments(); echo $this->yellow->extension->get("eddtagnavi")->getTagNavi("/blog/" , count , "0" , "tagnavi" , "All Projects" , $url, $urlArg)?>
 ```
 The following parameters can be adjusted:
-`getTagNavi("1" , "2" , "3" , "4" , $url, $urlArg)?>`
+`getTagNavi("1" , "2" , "3" , "4" , "5" , $url, $urlArg)?>`
 
 * 1 = location of blog start page (/ or /blog/ or ...)
-* 2 = number of entries to show, 0 for unlimited
-* 3 = Name for the css class
-* 4 = Name for the link that displays all blog entries. (All or All Projects or ...)
+* 2 = switch on the »Counter Mode« (count for count, nocount for no count)
+* 3 = number of entries to show, 0 for unlimited
+* 4 = name for the css class
+* 5 = name for the link that displays all blog entries. (All or All Projects or ...)
 
 3. Make adjustments in `css`. Here is a basic example. Paste the code into your `css-file`, e.g. at the end of your `stockholm.css`.
 ```
 .tagnavi ul {
-  padding-left: 0;
+    padding-left: 0;
 }
+
 .tagnavi li {
-  display: inline-block;
-  padding-right: 1rem;
+    display: inline-block;
+    padding-right: 1rem;
 }
+
 .tagnavi a {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 .tagnavi a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
+
 .tagnavi a.active {
-  text-decoration: underline;
+    text-decoration: underline;
+}
+
+.tagnavi span {
+    vertical-align: super;
+    color: var(--link);
+}
+
+.tagnavi span::before {
+    content: "(";
+    padding-left: 0.2rem;
+}
+
+.tagnavi span::after {
+    content: ")";
 }
 ```
 
