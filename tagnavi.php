@@ -33,7 +33,7 @@ class YellowTagNavi
         if (!is_array_empty($tags)) {
             if ($tagCount == "count"){
                 $countPosts = 0;
-                foreach ($tags as $key => $value) {
+                foreach ($pages as $page) {
                     $countPosts++;
                 }
                 $numberAllPosts = "<span>" . $countPosts . "</span>";
