@@ -1,7 +1,7 @@
 <?php
 class YellowTagNavi
 {
-    const VERSION = "0.8.05";
+    const VERSION = "0.9.06";
     public $yellow; // access to API
 
     // Handle initialisation
