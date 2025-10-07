@@ -7,7 +7,7 @@ Extension for Datenstrom Yellow. This extension creates a navigation from the bl
 
 1. [Download extension](https://github.com/PetersOtto/yellow-tagnavi/archive/refs/heads/main.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
 
-2. Insert the following code in a suitable place in your `start-blog.html`.
+2. Insert the following code in a suitable place in your `blog-start.html`.
 
 ```
 <?php $url = $this->yellow->page->getBase(); $urlArg = $this->yellow->toolbox->getLocationArguments(); echo $this->yellow->extension->get("tagnavi")->getTagNavi("/blog/" , "count" , "0" , "tagnavi" , "All Projects" , $url, $urlArg)?>
