@@ -8,13 +8,13 @@ Extension for Datenstrom Yellow. This extension creates a navigation from the bl
 1. [Download extension](https://github.com/PetersOtto/yellow-tagnavi/archive/refs/heads/main.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
 
 ### Variant A: Standalone navigation (recommended)
-2a. Go to `\system\extensions\yellow-system.ini` and choose `TagnaviInsideNavi: 0`.
+2a. Go to `\system\extensions\yellow-system.ini` and choose `TagnaviInsideNavi: 0`.  
 3a. Insert the following code in a suitable place in your `blog-start.html`.
 
 ```
 <?php $blogLocation = $this->yellow->page->location; $url = $this->yellow->page->getBase(); $urlArg = $this->yellow->toolbox->getLocationArguments(); echo $this->yellow->extension->get("tagnavi")->getTagNavi($blogLocation , "count" , "0" , "tagnavi" , "All Projects" , $url, $urlArg)?>
 ```
-4a. Go to `\system\extensions\yellow-system.ini` and choose your filter name vor all entries `TagnaviFilterName: All Projects`.
+4a. Go to `\system\extensions\yellow-system.ini` and choose your filter name vor all entries `TagnaviFilterName: All Projects`.  
 5a. Make adjustments in `css`. Here is a basic example. Paste the code into your `css-file`, e.g. at the end of your `stockholm.css`.
 
 ```
@@ -55,8 +55,8 @@ Extension for Datenstrom Yellow. This extension creates a navigation from the bl
 ```
 
 ### Variant B: Inside existing navigation
-If you choose this option, several other changes to the theme are often necessary. Take a look at my [Ibbtown theme](https://github.com/PetersOtto/yellow-Ibbtown), where I did it this way.
-2b. Go to `\system\extensions\yellow-system.ini` and choose `TagnaviInsideNavi: 1`.
+If you choose this option, several other changes to the theme are often necessary. Take a look at my [Ibbtown theme](https://github.com/PetersOtto/yellow-Ibbtown), where I did it this way.  
+2b. Go to `\system\extensions\yellow-system.ini` and choose `TagnaviInsideNavi: 1`.  
 3b. Insert the following code at the right place in your `navigation.html`.
 
 ```
@@ -70,7 +70,7 @@ if ($checkLayout == "blog-start"){
 }?>
 ```
 
-4b. Make adjustments in your `scss` or `css` file.
+4b. Make adjustments in your `scss` or `css` file.  
 5b. Go to `\system\extensions\yellow-system.ini` and choose your filter name vor all entries `TagnaviFilterName: All Projects`.
 
 ### Settings
