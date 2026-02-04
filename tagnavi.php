@@ -8,7 +8,7 @@ class YellowTagNavi
     public function onLoad($yellow)
     {
         $this->yellow = $yellow;
-        $this->yellow->system->setDefault("tagnaviInsideNavi", "1");
+        $this->yellow->system->setDefault("tagnaviInsideNavi", "0");
         $this->yellow->system->setDefault("tagnaviFilterName", "All Projects");
     }
 
