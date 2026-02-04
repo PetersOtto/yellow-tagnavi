@@ -23,6 +23,9 @@ class YellowTagNavi
         $tags = $pages->group("tag"); // = group content by tag with ascending name, A-Z
         // $tags = $pages->group("tag", false); // = group content by tag with descending name, Z-A
         // $tags = $pages->group("tag", false, "count"); // = group content by tag with descending count, highest first
+        if ($urlArg == "/"){
+            $urlArg = "";
+        }
         $url = $url.$startLocation.$urlArg;
         $numberAllPosts = "";
         $numberPosts = "";
