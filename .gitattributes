@@ -1,0 +1,4 @@
+.gitattributes export-ignore
+LICENSE export-ignore
+README*.md export-ignore
+screenshot-yellow-tagnavi.jpg export-ignore
