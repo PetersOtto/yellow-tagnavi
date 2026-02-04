@@ -18,6 +18,7 @@ class YellowTagNavi
         $output = null;
         $filterName = $this->yellow->system->get("tagnaviFilterName");
         $blogStart = $this->yellow->content->find($startLocation);
+        $urlArg =$this->yellow->lookup->normaliseArguments($urlArg);
         $pages = $this->yellow->content->index()->filter("layout", "blog")->sort("published", false);
         $tags = $pages->group("tag"); // = group content by tag with ascending name, A-Z
         // $tags = $pages->group("tag", false); // = group content by tag with descending name, Z-A
