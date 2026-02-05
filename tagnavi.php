@@ -1,7 +1,7 @@
 <?php
 class YellowTagNavi
 {
-    const VERSION = "0.9.07";
+    const VERSION = "0.9.18";
     public $yellow; // access to API
 
     // Handle initialisation
@@ -18,15 +18,11 @@ class YellowTagNavi
         $output = null;
         $filterName = $this->yellow->system->get("tagnaviFilterName");
         $blogStart = $this->yellow->content->find($startLocation);
-        $urlArg =$this->yellow->lookup->normaliseArguments($urlArg);
         $pages = $this->yellow->content->index()->filter("layout", "blog")->sort("published", false);
         $tags = $pages->group("tag"); // = group content by tag with ascending name, A-Z
         // $tags = $pages->group("tag", false); // = group content by tag with descending name, Z-A
         // $tags = $pages->group("tag", false, "count"); // = group content by tag with descending count, highest first
-        if ($urlArg == "/"){
-            $urlArg = "";
-        }
-        $url = $url.$startLocation.$urlArg;
+        $url = $this->yellow->lookup->normaliseArguments($url.$startLocation.$urlArg);
         $numberAllPosts = "";
         $numberPosts = "";
         
